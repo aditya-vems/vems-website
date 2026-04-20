@@ -7,6 +7,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+      "@v-ems/element": path.resolve(__dirname, "../element-ui/src"),
     },
   },
   server: {

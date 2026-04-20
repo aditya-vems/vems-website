@@ -16,9 +16,10 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*", "../element-ui/src/*"]
     }
   },
   "include": ["src"],
+  "exclude": ["node_modules", "../element-ui"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
