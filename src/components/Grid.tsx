@@ -1,24 +1,32 @@
 export function Grid() {
   const columns = 12;
-  const columnWidth = 100 / columns;
+  const step = 100 / columns;
 
   return (
-    <div
-      className="absolute inset-0 pointer-events-none"
-      style={{
-        backgroundImage: `
-          repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent calc(${columnWidth}% - 0.5px),
-            rgba(107, 114, 128, 0.2) calc(${columnWidth}% - 0.5px),
-            rgba(107, 114, 128, 0.2) ${columnWidth}%
-          )
-        `,
-        backgroundPositionX: "1.5rem",
-        backgroundSize: "calc(100% - 3rem) 100%",
-        backgroundRepeat: "repeat",
-      }}
-    />
+    <div className="pointer-events-none absolute inset-0 px-6">
+      <svg
+        className="h-full w-full"
+        preserveAspectRatio="none"
+        viewBox="0 0 100 100"
+      >
+        {Array.from({ length: columns - 1 }, (_, index) => {
+          const x = step * (index + 1);
+
+          return (
+            <line
+              key={x}
+              x1={x}
+              x2={x}
+              y1={0}
+              y2={100}
+              stroke="rgb(107 114 128 / 0.10)"
+              strokeDasharray="3 4"
+              strokeLinecap="round"
+              vectorEffect="non-scaling-stroke"
+            />
+          );
+        })}
+      </svg>
+    </div>
   );
 }
