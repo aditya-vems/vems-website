@@ -1,3 +1,5 @@
+import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
+import { HugeiconsIcon } from "@hugeicons/react";
 import { Section } from "@/sections/Section";
 
 interface Member {
@@ -41,11 +43,11 @@ export function Team() {
     <Section
       id="team"
       theme="light"
-      containerClassName="flex flex-col gap-10"
+      containerClassName="flex flex-col gap-16"
     >
       <div className="flex flex-col gap-6 max-w-3xl">
         <h2 className="text-5xl font-bold text-foreground leading-[1.1]">
-          Meet The Team.<br />
+          Meet The Team.
         </h2>
         <p className="text-lg text-muted-foreground">
           A small team of energy and software specialists. Reach out directly —
@@ -53,34 +55,75 @@ export function Team() {
         </p>
       </div>
 
-      <ul className="flex w-full gap-4">
+      <ul className="grid grid-cols-6 gap-4">
         {members.map((member) => (
           <li
             key={member.email}
-            className="relative flex flex-1 flex-col items-center gap-5 bg-card border border-border p-6 transition-colors duration-300 hover:bg-muted lg:border-border transform transition-transform motion-safe:hover:scale-[1.05]"
+            className="group relative flex flex-col bg-background transition-colors duration-300"
           >
-            <div className="relative size-24 shrink-0 overflow-hidden bg-muted">
+            <div className="relative aspect-[4/5] overflow-hidden bg-muted">
               <img
                 src={member.image}
                 alt={member.name}
-                className="size-full object-cover object-top"
+                className="size-full object-cover object-top scale-110 transition-all duration-500 ease-out grayscale contrast-[0.95] group-hover:grayscale-0 group-hover:contrast-100 group-hover:scale-105"
                 decoding="async"
                 loading="lazy"
               />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to bottom, transparent 55%, color-mix(in oklch, var(--background) 80%, transparent) 85%, var(--background) 100%)",
+                }}
+              />
+              <div
+                aria-hidden
+                className="absolute bottom-0 left-0 h-px w-0 bg-primary transition-[width] duration-500 ease-out group-hover:w-full"
+              />
             </div>
-            <div className="flex flex-col items-center">
-              <span className="text-base font-medium text-foreground">
+
+            <div className="flex flex-col gap-1 pt-4">
+              <span className="text-sm font-medium text-foreground leading-tight">
                 {member.name}
               </span>
               <a
                 href={`mailto:${member.email}`}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="text-sm text-muted-foreground transition-colors hover:text-primary break-all"
               >
                 {member.email}
               </a>
             </div>
           </li>
         ))}
+
+        {/* Join-us slot */}
+        <li className="group relative flex flex-col">
+          <a
+            href="#"
+            className="group/card relative flex aspect-[4/5] flex-col items-center justify-center gap-3 border border-dashed border-border bg-background transition-colors duration-300 hover:border-primary hover:bg-muted/40"
+          >
+            <div className="flex size-10 items-center justify-center rounded-full bg-muted transition-all duration-300 group-hover/card:bg-primary group-hover/card:scale-110">
+              <HugeiconsIcon
+                icon={ArrowUpRight01Icon}
+                size={16}
+                strokeWidth={1.75}
+                className="text-muted-foreground transition-colors duration-300 group-hover/card:text-primary-foreground"
+              />
+            </div>
+            <span className="text-sm font-medium text-foreground text-center px-3">
+              This could be you.
+            </span>
+          </a>
+          <div className="flex flex-col gap-1 pt-4">
+            <span className="text-sm font-medium text-foreground leading-tight">
+              Open roles
+            </span>
+            <span className="text-sm text-muted-foreground">
+              Join the team
+            </span>
+          </div>
+        </li>
       </ul>
     </Section>
   );

@@ -10,6 +10,7 @@ export interface SectionProps {
   containerClassName?: string;
   children?: ReactNode;
   showGrid?: boolean;
+  backdrop?: ReactNode;
 }
 
 export function Section({
@@ -19,6 +20,7 @@ export function Section({
   theme = "light",
   children,
   showGrid = true,
+  backdrop,
 }: SectionProps) {
   const sectionClassName = [
     "relative w-full overflow-hidden",
@@ -41,6 +43,11 @@ export function Section({
       data-theme={theme}
       className={sectionClassName}
     >
+      {backdrop && (
+        <div className="pointer-events-none absolute inset-0 z-0">
+          {backdrop}
+        </div>
+      )}
       <div className={containerClassNameMerged}>
         {showGrid && <Grid className="absolute inset-0 z-0" />}
         {children}
