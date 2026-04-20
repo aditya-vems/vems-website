@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Logo } from "./Logo";
+import { Logo } from "@v-ems/element";
 
 export function Navigation() {
   const [activeSectionColor, setActiveSectionColor] = useState("background");
