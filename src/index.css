@@ -1,2 +1,16 @@
 @import "tailwindcss";
 @import "@v-ems/element/globals.css";
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+}
+
+@layer components {
+  /* Component utilities if needed */
+}
+
+@layer utilities {
+  /* Utility overrides if needed */
+}
