@@ -21,29 +21,6 @@ export function HeroIllustration() {
     },
   };
 
-  const floatVariants = {
-    animate: {
-      y: [-20, 20, -20],
-      transition: {
-        duration: 6,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
-
-  const pulseVariants = {
-    animate: {
-      scale: [1, 1.1, 1],
-      opacity: [0.5, 1, 0.5],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut",
-      },
-    },
-  };
-
   return (
     <motion.div
       className="relative w-full h-full flex items-center justify-center"
@@ -52,37 +29,37 @@ export function HeroIllustration() {
       animate="visible"
     >
       {/* Central orb */}
-      <motion.div
-        className="absolute w-48 h-48 rounded-full bg-gradient-to-br from-primary/40 to-accent/20 blur-3xl"
-        variants={itemVariants}
-        animate="animate"
-        variants={pulseVariants}
-      />
+      <motion.div className="absolute flex size-48 items-center justify-center" variants={itemVariants}>
+        <motion.div
+          className="size-full rounded-full bg-gradient-to-br from-primary/40 to-accent/20 blur-3xl"
+          animate={{ scale: [1, 1.1, 1], opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </motion.div>
 
       {/* Floating circle 1 */}
       <motion.div
-        className="absolute top-12 right-24 w-32 h-32 rounded-full border border-primary/30 bg-primary/5"
+        className="absolute right-24 top-12 flex size-32 items-center justify-center"
         variants={itemVariants}
-        animate="animate"
-        variants={floatVariants}
-      />
+      >
+        <motion.div
+          className="size-full rounded-full border border-primary/30 bg-primary/5"
+          animate={{ y: [-20, 20, -20] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </motion.div>
 
       {/* Floating circle 2 */}
       <motion.div
-        className="absolute bottom-20 left-16 w-40 h-40 rounded-full border border-accent/30 bg-accent/5"
+        className="absolute bottom-20 left-16 flex size-40 items-center justify-center"
         variants={itemVariants}
-        animate="animate"
-        variants={{
-          animate: {
-            y: [20, -20, 20],
-            transition: {
-              duration: 7,
-              repeat: Infinity,
-              ease: "easeInOut",
-            },
-          },
-        }}
-      />
+      >
+        <motion.div
+          className="size-full rounded-full border border-accent/30 bg-accent/5"
+          animate={{ y: [20, -20, 20] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+        />
+      </motion.div>
 
       {/* Connecting lines */}
       <motion.svg
