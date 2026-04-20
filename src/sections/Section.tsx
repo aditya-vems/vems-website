@@ -1,3 +1,5 @@
+import { Grid } from "@/components/Grid";
+
 export type SectionTheme = "dark" | "light";
 export type SectionHeight = "auto" | "screen";
 
@@ -18,7 +20,7 @@ export function Section({
   theme = "light",
 }: SectionProps) {
   const sectionClassName = [
-    "w-full px-6 py-32",
+    "relative w-full px-6 py-32 overflow-hidden",
     theme === "dark" ? "dark bg-card" : "bg-background",
     className,
   ]
@@ -34,7 +36,8 @@ export function Section({
 
   return (
     <section id={id} className={sectionClassName}>
-      <div className={containerClassNameMerged}>
+      <Grid />
+      <div className={`relative z-10 ${containerClassNameMerged}`}>
         <h2 className="mt-0 text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
           {title}
         </h2>
