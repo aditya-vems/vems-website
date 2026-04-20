@@ -28,14 +28,18 @@ export function Section({
     .join(" ");
 
   const containerClassNameMerged = [
-    "relative mx-auto w-full max-w-6xl py-32",
+    "relative mx-auto w-full max-w-6xl py-32 h-[500px]",
     containerClassName,
   ]
     .filter(Boolean)
     .join(" ");
 
   return (
-    <section id={id} className={sectionClassName}>
+    <section
+      id={id}
+      data-theme={theme}
+      className={sectionClassName}
+    >
       <div className={containerClassNameMerged}>
         <Grid className="absolute inset-0 z-0" />
         <h2 className="relative z-10 mt-0 w-full text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
