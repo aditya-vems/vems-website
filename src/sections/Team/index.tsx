@@ -1,11 +1,9 @@
 export function Team() {
   return (
-    <section
-      style={{ backgroundColor: "var(--background)" }}
-      className="h-screen flex items-center justify-center px-6"
-    >
-      <div className="text-center">
-        <h2 className="text-4xl font-bold text-foreground">Team</h2>
+    <section className="bg-background min-h-screen flex items-center px-6 py-20">
+      <div className="max-w-6xl mx-auto w-full">
+        <h2 className="text-5xl font-bold text-foreground mb-4">Team</h2>
+        <p className="text-lg text-foreground/80">Team section content goes here</p>
       </div>
     </section>
   );
