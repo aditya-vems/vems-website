@@ -1,11 +1,11 @@
-import { Section } from "../Section";
+import { Section } from "@/sections/Section";
 
 export function Hero() {
   return (
     <Section
+      id="hero"
       theme="dark"
       title="Hero"
-      description="Hero section content goes here"
     />
   );
 }

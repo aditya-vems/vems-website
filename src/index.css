@@ -1,2 +1,4 @@
-@import "tailwindcss";
-@import "@v-ems/element/globals.css";
+@import "@fontsource-variable/inter/index.css";
+@import "../node_modules/@v-ems/element/dist/style.css";
+
+@source "./**/*.{ts,tsx,js,jsx,html}";

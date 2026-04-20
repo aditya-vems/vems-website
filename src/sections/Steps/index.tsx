@@ -1,11 +1,12 @@
-import { Section } from "../Section";
+import { Section } from "@/sections/Section";
 
 export function Steps() {
   return (
     <Section
+      id="steps"
+      height="auto"
       theme="dark"
       title="Steps"
-      description="Steps section content goes here"
     />
   );
 }
