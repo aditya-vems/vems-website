@@ -7,6 +7,10 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
+      "vems-element-style": path.resolve(
+        __dirname,
+        "./node_modules/@v-ems/element/dist/style.css"
+      ),
       "@": path.resolve(__dirname, "./src"),
     },
   },
