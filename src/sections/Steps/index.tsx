@@ -4,9 +4,7 @@ export function Steps() {
   return (
     <Section
       id="steps"
-      height="auto"
       theme="dark"
-      title="Steps"
     />
   );
 }

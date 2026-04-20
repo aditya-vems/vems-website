@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./fonts/circular.css";
 @import "@fontsource-variable/inter/index.css";
 @import "vems-element-style";
 
@@ -8,10 +9,31 @@
   html {
     scroll-behavior: smooth;
   }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+}
+
+@layer theme {
+  :root,
+  :host {
+    --font-sans: "Circular", ui-sans-serif, system-ui, sans-serif;
+    --font-heading: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   }
 }

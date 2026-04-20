@@ -1,23 +1,22 @@
 import { Grid } from "@/components/Grid";
+import { ReactNode } from "react";
 
 export type SectionTheme = "dark" | "light";
-export type SectionHeight = "auto" | "screen";
 
 export interface SectionProps {
   id?: string;
-  title: string;
   className?: string;
   theme?: SectionTheme;
-  height?: SectionHeight;
   containerClassName?: string;
+  children?: ReactNode;
 }
 
 export function Section({
   id,
-  title,
   className,
   containerClassName,
   theme = "light",
+  children,
 }: SectionProps) {
   const sectionClassName = [
     "relative w-full overflow-hidden",
@@ -28,7 +27,7 @@ export function Section({
     .join(" ");
 
   const containerClassNameMerged = [
-    "relative mx-auto w-full max-w-6xl py-32 h-[500px]",
+    "relative z-10 mx-auto w-full max-w-6xl py-32",
     containerClassName,
   ]
     .filter(Boolean)
@@ -42,9 +41,7 @@ export function Section({
     >
       <div className={containerClassNameMerged}>
         <Grid className="absolute inset-0 z-0" />
-        <h2 className="relative z-10 mt-0 w-full text-3xl font-bold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
-          {title}
-        </h2>
+        {children}
       </div>
     </section>
   );

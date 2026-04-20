@@ -4,9 +4,7 @@ export function Team() {
   return (
     <Section
       id="team"
-      height="auto"
       theme="light"
-      title="Team"
     />
   );
 }

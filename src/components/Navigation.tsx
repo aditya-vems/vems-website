@@ -1,7 +1,7 @@
 import { Button } from "@v-ems/element";
 
 export const Navigation = () => {
-  const buttonClassName = "font-medium cursor-pointer text-foreground/60 hover:text-foreground transition-colors !no-underline";
+  const buttonClassName = "font-medium text-base cursor-pointer text-foreground/60 hover:text-foreground transition-colors !no-underline";
   return (
     <div className="flex items-center gap-2">
       <Button variant="link" className={buttonClassName}>Industries</Button>

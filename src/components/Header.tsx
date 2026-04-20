@@ -1,7 +1,7 @@
 import { forwardRef } from "react";
 import { Button } from "@v-ems/element";
+import { Navigation } from "./Navigation";
 import { LogoLine } from "@v-ems/element/brand";
-import { Navigation } from "@/components/Navigation";
 
 export type HeaderTheme = "dark" | "light";
 
