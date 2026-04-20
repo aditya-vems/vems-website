@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",
-    "@v-ems/element": "^0.0.3",
+    "@v-ems/element": "^0.0.7",
     "class-variance-authority": "^0.7.1",
     "framer-motion": "^11.0.3",
     "react": "^19.2.4",
