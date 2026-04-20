@@ -1,12 +1,14 @@
 import { Navigation } from "@/components/Navigation";
 import { Section } from "@/components/Section";
 import { Grid } from "@/components/Grid";
+import { Button } from "@v-ems/element";
 
 export default function App() {
   return (
     <div className="w-full">
       <Grid />
       <Navigation />
+      <Button variant="destructive" className="fixed top-20 left-6 z-50">Test Button</Button>
 
       <Section bgToken="card" id="hero">
         <div className="text-center">
