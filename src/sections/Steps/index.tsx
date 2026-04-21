@@ -13,10 +13,10 @@ export function Steps() {
       containerClassName="flex flex-col gap-20"
     >
       <div className="flex flex-col gap-6 max-w-3xl">
-        <AccentTag content="Questions" accent="#ea580c" />
+        <AccentTag content="Questions" />
         <h2 className="text-5xl font-bold text-foreground leading-[1.1]">
           Complex Energy Questions.<br />
-          Clear Convincing Answers.
+          <span className="text-muted-foreground">Clear Convincing Answers.</span>
         </h2>
         <p className="text-lg text-muted-foreground">
           Your clients are asking urgent questions — and they expect clear,

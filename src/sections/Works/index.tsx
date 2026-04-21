@@ -1,62 +1,43 @@
 import { Section } from "@/sections/Section";
 import { AccentTag } from "@/components/AccentTag";
 
-const TERMS = [
-  "Solar",
-  "Wind",
-  "Battery",
-  "EV Charging",
-  "Grid Congestion",
-  "Tariffs",
-  "Load Profiles",
-  "CAPEX",
-  "OPEX",
-  "Peak Shaving",
-  "Curtailment",
-  "What-if Scenarios",
-  "Self-Consumption",
-  "ROI",
+const LOGOS = [
+  { src: "https://www.v-ems.com/images/Logo/Algemeen.webp", alt: "Algemeen" },
+  { src: "https://www.v-ems.com/images/Logo/ProntoPower.webp", alt: "Pronto Power" },
+  { src: "https://www.v-ems.com/images/Logo/edmij.webp", alt: "Edmij" },
+  { src: "https://www.v-ems.com/images/Logo/withthegrid.webp", alt: "With The Grid" },
+  { src: "https://www.v-ems.com/images/Logo/janszon.webp", alt: "Janszon" },
+  { src: "https://www.v-ems.com/images/Logo/alius.webp", alt: "Alius" },
+  { src: "https://www.v-ems.com/images/Logo/hogeschool.webp", alt: "Hogeschool" },
+  { src: "https://www.v-ems.com/images/Logo/vdh.webp", alt: "VDH" },
+  { src: "https://www.v-ems.com/images/Logo/deGroeneReusOm.webp", alt: "De Groene Reus" },
+  { src: "https://www.v-ems.com/images/Logo/rexel.webp", alt: "Rexel" },
+  { src: "https://www.v-ems.com/images/Logo/intercel.webp", alt: "Intercel" },
 ];
 
-function Bolt() {
+function LogoCell({ src, alt }: { src: string; alt: string }) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      className="h-5 w-5 shrink-0 text-primary"
-      fill="currentColor"
-      aria-hidden
-    >
-      <path d="M13 2 3 14h7l-1 8 11-13h-7l1-7z" />
-    </svg>
+    <div className="group relative flex h-24 w-48 shrink-0 items-center justify-center px-6">
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="max-h-12 max-w-full object-contain opacity-60 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0"
+      />
+    </div>
   );
 }
 
-function MarqueeRow({
-  items,
-  reverse = false,
-}: {
-  items: string[];
-  reverse?: boolean;
-}) {
-  const loop = [...items, ...items];
+function MarqueeTrack() {
+  const loop = [...LOGOS, ...LOGOS];
   return (
-    <div className="relative overflow-hidden">
-      <div
-        className="flex w-max items-center gap-10 whitespace-nowrap py-4"
-        style={{
-          animation: `${reverse ? "marquee-reverse" : "marquee"} 40s linear infinite`,
-        }}
-      >
-        {loop.map((term, i) => (
-          <div
-            key={`${term}-${i}`}
-            className="flex items-center gap-10 text-3xl font-semibold tracking-tight text-foreground/80"
-          >
-            <span>{term}</span>
-            <Bolt />
-          </div>
-        ))}
-      </div>
+    <div
+      className="flex w-max items-stretch whitespace-nowrap divide-x divide-dashed divide-border"
+      style={{ animation: "works-marquee 55s linear infinite" }}
+    >
+      {loop.map((logo, i) => (
+        <LogoCell key={`${logo.alt}-${i}`} src={logo.src} alt={logo.alt} />
+      ))}
     </div>
   );
 }
@@ -66,36 +47,38 @@ export function Works() {
     <Section
       id="works"
       theme="light"
-      containerClassName="flex flex-col gap-10 py-20"
+      showGrid={false}
+      containerClassName="flex flex-col gap-10 pt-20 pb-0"
     >
       <div className="flex flex-col items-center gap-4 text-center">
-        <AccentTag content="Platform" />
-        <h2 className="text-3xl font-bold text-foreground leading-[1.1]">
-          One platform. Every layer of the grid.
+        <AccentTag content="Trusted By" />
+        <h2 className="text-3xl font-semibold tracking-tight text-foreground">
+          Teams Shaping The Energy Transition.
         </h2>
       </div>
 
-      <div
-        className="relative -mx-8"
-        style={{
-          maskImage:
-            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-          WebkitMaskImage:
-            "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-        }}
-      >
-        <MarqueeRow items={TERMS} />
-        <MarqueeRow items={[...TERMS].reverse()} reverse />
+      <div className="relative -mx-8">
+        {/* Top & bottom rails make the strip feel like a filmstrip bay */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-border" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-border" />
+
+        <div
+          className="overflow-hidden"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+          }}
+        >
+          <MarqueeTrack />
+        </div>
       </div>
 
       <style>{`
-        @keyframes marquee {
+        @keyframes works-marquee {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }
-        }
-        @keyframes marquee-reverse {
-          from { transform: translateX(-50%); }
-          to { transform: translateX(0); }
         }
       `}</style>
     </Section>
