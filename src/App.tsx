@@ -1,4 +1,4 @@
-import { Hero, Works, Steps, Team, Footer } from "@/sections";
+import { Hero, Works, Process, Steps, Team, Footer } from "@/sections";
 import { Header, type HeaderTheme } from "@/components/Header";
 import { useEffect, useRef, useState } from "react";
 
@@ -52,6 +52,7 @@ export default function App() {
       <Header ref={headerRef} theme={theme} />
       <Hero />
       <Works />
+      <Process />
       <Steps />
       <Team />
       <Footer />

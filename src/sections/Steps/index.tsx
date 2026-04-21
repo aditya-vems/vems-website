@@ -1,5 +1,6 @@
 import { Section } from "@/sections/Section";
 import { StackCard } from "@/components/StackCard";
+import { AccentTag } from "@/components/AccentTag";
 import { GridIllustration } from "@/components/illustrations/GridIllustration";
 import { EVChargerIllustration } from "@/components/illustrations/EVChargerIllustration";
 import { BatteryIllustration } from "@/components/illustrations/BatteryIllustration";
@@ -12,6 +13,7 @@ export function Steps() {
       containerClassName="flex flex-col gap-20"
     >
       <div className="flex flex-col gap-6 max-w-3xl">
+        <AccentTag content="Questions" accent="#ea580c" />
         <h2 className="text-5xl font-bold text-foreground leading-[1.1]">
           Complex Energy Questions.<br />
           Clear Convincing Answers.

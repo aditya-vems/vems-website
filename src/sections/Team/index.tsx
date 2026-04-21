@@ -1,6 +1,7 @@
 import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Section } from "@/sections/Section";
+import { AccentTag } from "@/components/AccentTag";
 
 interface Member {
   name: string;
@@ -46,6 +47,7 @@ export function Team() {
       containerClassName="flex flex-col gap-16"
     >
       <div className="flex flex-col gap-6 max-w-3xl">
+        <AccentTag content="Team" />
         <h2 className="text-5xl font-bold text-foreground leading-[1.1]">
           Meet The Team.
         </h2>
