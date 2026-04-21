@@ -47,7 +47,6 @@ export function Works() {
     <Section
       id="works"
       theme="light"
-      showGrid={false}
       containerClassName="flex flex-col gap-10 pt-20 pb-0"
     >
       <div className="flex flex-col items-center gap-4 text-center">
@@ -57,20 +56,20 @@ export function Works() {
         </h2>
       </div>
 
-      <div className="relative -mx-8">
-        {/* Top & bottom rails make the strip feel like a filmstrip bay */}
+      <div
+        className="relative -mx-8 bg-muted"
+        style={{
+          maskImage:
+            "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
+        }}
+      >
+        {/* Top & bottom rails fade with the mask since they live inside it */}
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-border" />
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-border" />
 
-        <div
-          className="overflow-hidden"
-          style={{
-            maskImage:
-              "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%)",
-          }}
-        >
+        <div className="overflow-hidden">
           <MarqueeTrack />
         </div>
       </div>

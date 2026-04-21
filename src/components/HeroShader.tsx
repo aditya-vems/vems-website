@@ -28,7 +28,7 @@ export function HeroShader({ className }: { className?: string }) {
           mixBlendMode: "screen",
           opacity: 0.55,
         }}
-        colors={["#000000", "#0b1f3a", "#1e3a8a", "#0ea5e9", "#000000"]}
+        colors={["#000000", "#1a2330", "#2196e8", "#e5e7eb", "#000000"]}
         distortion={0.9}
         swirl={0.3}
         speed={0.2}
