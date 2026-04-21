@@ -88,9 +88,9 @@ export function Team() {
         <h2 className="text-5xl font-bold text-foreground leading-[1.1]">
           Meet The <span className="text-primary">Team.</span>
         </h2>
-        <p className="text-lg text-muted-foreground">
-          A small team of energy and software specialists. Reach out directly —
-          no forms, no gatekeepers.
+        <p className="text-lg text-muted-foreground capitalize">
+          A small team of energy and software specialists. 
+          No forms, no gatekeepers.
         </p>
       </Reveal>
 

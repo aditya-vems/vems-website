@@ -27,8 +27,8 @@ export function Hero() {
         </div>
 
         <Reveal delay={460}>
-          <p className="max-w-xl text-center text-lg leading-relaxed text-muted-foreground">
-            Turn complex energy scenarios into client-ready business cases — in
+          <p className="max-w-xl text-center text-lg leading-relaxed text-muted-foreground capitalize">
+            Turn complex energy scenarios into client-ready business cases in
             minutes, not weeks.
           </p>
         </Reveal>

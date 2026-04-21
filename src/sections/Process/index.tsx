@@ -19,9 +19,9 @@ export function Process() {
           From Question To <span className="text-primary">Client-Ready</span><br />
           <span className="text-muted-foreground">Report In Three Steps.</span>
         </h2>
-        <p className="text-lg text-muted-foreground">
-          No spreadsheets, no stitched-together tools. Ask, visualize, share —
-          that's the workflow.
+        <p className="text-lg text-muted-foreground capitalize">
+          No spreadsheets, no stitched-together tools. Ask, visualize, share.
+          That's the workflow.
         </p>
       </Reveal>
 
@@ -38,7 +38,7 @@ export function Process() {
           <StepCard
             step={1}
             title="Visualize The Answer."
-            description="Instantly spot congestion, flexibility, and upgrade opportunities. Explore unlimited what-if scenarios — add solar, batteries, tariffs and smart control strategies."
+            description="Instantly spot congestion, flexibility, and upgrade opportunities. Explore unlimited what-if scenarios. Add solar, batteries, tariffs and smart control strategies."
             illustration={<VisualizeIllustration />}
           />
         </Reveal>
@@ -46,7 +46,7 @@ export function Process() {
           <StepCard
             step={2}
             title="Share The Results."
-            description="Compare savings, payback, CAPEX, OPEX and energy impact side by side. Export automatic, white-labeled reports with one click."
+            description="Compare savings, payback, CAPEX, OPEX and energy impact side by side. Export automatic white-labeled reports with one click."
             illustration={<ShareIllustration />}
           />
         </Reveal>

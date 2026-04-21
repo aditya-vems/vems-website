@@ -41,9 +41,9 @@ export function Spotlight() {
             <br />
             <span className="text-muted-foreground">Results You Trust.</span>
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Three things every advisor, engineer, and client needs — and the
-            reasons teams across the energy transition choose VEMS.
+          <p className="text-lg text-muted-foreground capitalize">
+            Three things every advisor, engineer, and client needs. Reasons
+            teams across the energy transition choose VEMS.
           </p>
         </Reveal>
 
@@ -193,7 +193,9 @@ function SpotlightIllustration() {
                   className="text-white/50"
                 />
               </span>
-              <span className="text-sm font-medium">Share with engineering</span>
+              <span className="text-sm font-medium">
+                Share with engineering
+              </span>
             </div>
           </div>
         </div>
