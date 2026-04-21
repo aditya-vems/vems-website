@@ -25,10 +25,10 @@ export function HeroShader({ className }: { className?: string }) {
         style={{
           width: "100%",
           height: "100%",
-          mixBlendMode: "screen",
-          opacity: 0.55,
+          mixBlendMode: "multiply",
+          opacity: 0.45,
         }}
-        colors={["#000000", "#1a2330", "#2196e8", "#e5e7eb", "#000000"]}
+        colors={["#ffffff", "#dbe9f7", "#2196e8", "#f1f5f9", "#ffffff"]}
         distortion={0.9}
         swirl={0.3}
         speed={0.2}

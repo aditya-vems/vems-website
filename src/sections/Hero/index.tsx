@@ -1,56 +1,68 @@
 import { Button } from "@v-ems/element";
 import { Section } from "@/sections/Section";
-import { HeroShader } from "@/components/HeroShader";
 import { Reveal } from "@/components/Reveal";
+import { HeroShader } from "@/components/HeroShader";
+import { LogosMarquee } from "@/components/LogosMarquee";
 
 export function Hero() {
   return (
     <Section
       id="hero"
-      theme="dark"
+      theme="light"
       backdrop={<HeroShader className="absolute inset-0" />}
-      // Center content both vertically and horizontally in the Section
-      containerClassName="relative h-[calc(100vh-60px)] flex items-center justify-center"
+      containerClassName="relative flex min-h-[calc(100vh-60px)] flex-col justify-between gap-16 pt-28 pb-10"
     >
-      <div className="relative z-10 flex flex-col items-center gap-6 max-w-2xl w-full">
-        <div className="w-full flex flex-col items-center">
-          <Reveal delay={200}>
-            <h1 className="text-5xl font-bold text-foreground text-center">Bring <span className="text-primary">Clarity.</span></h1>
+      <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-8">
+        <div className="flex flex-col items-center">
+          <Reveal delay={220}>
+            <h1 className="text-center text-6xl font-bold leading-[1.05] tracking-[-0.02em] text-primary">
+              Bring Clarity.
+            </h1>
           </Reveal>
-          <Reveal delay={350}>
-            <h1 className="text-5xl font-bold text-muted-foreground text-center">
+          <Reveal delay={340}>
+            <h1 className="text-center text-6xl font-bold leading-[1.05] tracking-[-0.02em] text-foreground">
               Empower Energy Decisions.
             </h1>
           </Reveal>
         </div>
 
-        <Reveal delay={450}>
-          <p className="text-xl font-medium text-foreground text-center">
-            Complex energy scenarios into visual business cases in
-            minutes.
+        <Reveal delay={460}>
+          <p className="max-w-xl text-center text-lg leading-relaxed text-muted-foreground">
+            Turn complex energy scenarios into client-ready business cases — in
+            minutes, not weeks.
           </p>
         </Reveal>
-        <Reveal delay={600}>
+
+        <Reveal delay={580}>
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="group flex w-full max-w-md items-center gap-1 rounded-full border border-border bg-background/40 p-1.5 pl-5 backdrop-blur transition-colors focus-within:border-primary"
+            className="group flex w-full max-w-md items-center gap-1 rounded-full border border-white/60 bg-white/50 p-1 py-0.5 pl-6! shadow-[0_12px_40px_-12px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-colors focus-within:border-primary"
           >
             <input
               type="email"
               required
               placeholder="you@company.com"
-              className="flex-1 bg-transparent text-base text-foreground placeholder:text-muted-foreground outline-none"
+              className="flex-1 bg-transparent py-2 text-base text-foreground placeholder:text-muted-foreground outline-none"
             />
             <Button
               type="submit"
               variant="default"
-              className="rounded-full font-medium px-5 py-4 cursor-pointer shrink-0 bg-foreground text-background hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="cursor-pointer shrink-0 rounded-full bg-foreground px-5 py-4 font-medium text-background transition-colors hover:bg-primary hover:text-primary-foreground"
             >
               Talk To An Expert
             </Button>
           </form>
         </Reveal>
       </div>
+
+      <Reveal delay={700} className="relative z-10 flex flex-col items-center gap-6">
+        <span className="text-base capitalize text-muted-foreground font-medium">
+          Trusted by teams shaping the energy transition
+        </span>
+        <div className="-mx-8 w-[calc(100%+4rem)] bg-white/75 backdrop-blur-lg">
+          <LogosMarquee />
+        </div>
+      </Reveal>
     </Section>
   );
 }

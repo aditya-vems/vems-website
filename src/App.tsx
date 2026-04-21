@@ -1,10 +1,10 @@
-import { Hero, Works, Process, Steps, Team, Footer } from "@/sections";
+import { Hero, Steps, Process, Spotlight, Team, Footer } from "@/sections";
 import { Header, type HeaderTheme } from "@/components/Header";
 import { useEffect, useRef, useState } from "react";
 
 export default function App() {
   const headerRef = useRef<HTMLElement | null>(null);
-  const [theme, setTheme] = useState<HeaderTheme>("dark");
+  const [theme, setTheme] = useState<HeaderTheme>("light");
 
   useEffect(() => {
     const sections = Array.from(
@@ -48,12 +48,12 @@ export default function App() {
   }, []);
 
   return (
-    <div className="w-full bg-[oklch(20.5%_0_0)]">
+    <div className="w-full bg-background">
       <Header ref={headerRef} theme={theme} />
       <Hero />
-      <Works />
-      <Process />
       <Steps />
+      <Process />
+      <Spotlight />
       <Team />
       <Footer />
     </div>
