@@ -16,7 +16,7 @@ export function Process() {
       <Reveal className="flex flex-col gap-6 max-w-3xl">
         <AccentTag content="Workflow" />
         <h2 className="text-5xl font-bold text-foreground leading-[1.1]">
-          From Question To Client-Ready<br />
+          From Question To <span className="text-primary">Client-Ready</span><br />
           <span className="text-muted-foreground">Report In Three Steps.</span>
         </h2>
         <p className="text-lg text-muted-foreground">

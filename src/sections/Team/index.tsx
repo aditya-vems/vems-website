@@ -1,8 +1,44 @@
+import { useState } from "react";
 import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Section } from "@/sections/Section";
 import { AccentTag } from "@/components/AccentTag";
 import { Reveal } from "@/components/Reveal";
+
+function JoinCard() {
+  const [hover, setHover] = useState(false);
+  return (
+    <a
+      href="#"
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      onFocus={() => setHover(true)}
+      onBlur={() => setHover(false)}
+      className="relative flex aspect-[4/5] flex-col items-center justify-center gap-3 border border-dashed border-border bg-background transition-colors duration-300 hover:border-primary hover:bg-muted/40"
+    >
+      <div
+        className="flex size-10 items-center justify-center rounded-full transition-all duration-300"
+        style={{
+          backgroundColor: hover ? "var(--primary)" : "var(--muted)",
+          transform: hover ? "scale(1.1)" : "scale(1)",
+        }}
+      >
+        <HugeiconsIcon
+          icon={ArrowUpRight01Icon}
+          size={16}
+          strokeWidth={1.75}
+          style={{
+            color: hover ? "#fff" : "var(--muted-foreground)",
+            transition: "color 300ms ease",
+          }}
+        />
+      </div>
+      <span className="text-sm font-medium text-foreground text-center px-3">
+        This could be you.
+      </span>
+    </a>
+  );
+}
 
 interface Member {
   name: string;
@@ -48,9 +84,9 @@ export function Team() {
       containerClassName="flex flex-col gap-16"
     >
       <Reveal className="flex flex-col gap-6 max-w-3xl">
-        <AccentTag content="Team" />
+        <AccentTag content="People" />
         <h2 className="text-5xl font-bold text-foreground leading-[1.1]">
-          Meet The Team.
+          Meet The <span className="text-primary">Team.</span>
         </h2>
         <p className="text-lg text-muted-foreground">
           A small team of energy and software specialists. Reach out directly —
@@ -66,11 +102,11 @@ export function Team() {
             key={member.email}
             className="group relative flex flex-col bg-background transition-colors duration-300"
           >
-            <div className="relative aspect-[4/5] overflow-hidden bg-muted">
+            <div className="relative aspect-[4/5] overflow-hidden bg-muted border border-border">
               <img
                 src={member.image}
                 alt={member.name}
-                className="size-full object-cover object-top scale-110 transition-all duration-500 ease-out grayscale contrast-[0.95] group-hover:grayscale-0 group-hover:contrast-100 group-hover:scale-105"
+                className="size-full object-cover object-top scale-110 transition-transform duration-500 ease-out group-hover:scale-105"
                 decoding="async"
                 loading="lazy"
               />
@@ -103,29 +139,14 @@ export function Team() {
         ))}
 
         {/* Join-us slot */}
-        <Reveal as="li" delay={members.length * 80} className="group relative flex flex-col">
-          <a
-            href="#"
-            className="group/card relative flex aspect-[4/5] flex-col items-center justify-center gap-3 border border-dashed border-border bg-background transition-colors duration-300 hover:border-primary hover:bg-muted/40"
-          >
-            <div className="flex size-10 items-center justify-center rounded-full bg-muted transition-all duration-300 group-hover/card:bg-primary group-hover/card:scale-110">
-              <HugeiconsIcon
-                icon={ArrowUpRight01Icon}
-                size={16}
-                strokeWidth={1.75}
-                className="text-muted-foreground transition-colors duration-300 group-hover/card:text-primary-foreground"
-              />
-            </div>
-            <span className="text-sm font-medium text-foreground text-center px-3">
-              This could be you.
-            </span>
-          </a>
+        <Reveal as="li" delay={members.length * 80} className="relative flex flex-col">
+          <JoinCard />
           <div className="flex flex-col gap-1 pt-4">
             <span className="text-sm font-medium text-foreground leading-tight">
-              Open roles
+              Open Roles
             </span>
             <span className="text-sm text-muted-foreground">
-              Join the team
+              Join The Team
             </span>
           </div>
         </Reveal>

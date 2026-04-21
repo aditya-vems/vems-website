@@ -15,7 +15,7 @@ export function Footer() {
           <div className="flex flex-col items-start gap-3">
             <LogoLine className="shrink-0 h-7" />
             <p className="text-base leading-relaxed text-muted-foreground">
-              Virtual Energy Management System — Engineered in Delft, Deployed
+              Virtual Energy Management Simulator (VEMS) — Engineered in Delft, Deployed
               Across the Grid.
             </p>
           </div>

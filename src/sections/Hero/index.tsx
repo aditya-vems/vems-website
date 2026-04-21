@@ -15,7 +15,7 @@ export function Hero() {
       <div className="relative z-10 flex flex-col items-center gap-6 max-w-2xl w-full">
         <div className="w-full flex flex-col items-center">
           <Reveal delay={200}>
-            <h1 className="text-5xl font-bold text-foreground text-center">Bring Clarity.</h1>
+            <h1 className="text-5xl font-bold text-foreground text-center">Bring <span className="text-primary">Clarity.</span></h1>
           </Reveal>
           <Reveal delay={350}>
             <h1 className="text-5xl font-bold text-muted-foreground text-center">
