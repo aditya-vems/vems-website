@@ -2,6 +2,7 @@ import { ArrowUpRight01Icon } from "@hugeicons/core-free-icons";
 import { HugeiconsIcon } from "@hugeicons/react";
 import { Section } from "@/sections/Section";
 import { AccentTag } from "@/components/AccentTag";
+import { Reveal } from "@/components/Reveal";
 
 interface Member {
   name: string;
@@ -46,7 +47,7 @@ export function Team() {
       theme="light"
       containerClassName="flex flex-col gap-16"
     >
-      <div className="flex flex-col gap-6 max-w-3xl">
+      <Reveal className="flex flex-col gap-6 max-w-3xl">
         <AccentTag content="Team" />
         <h2 className="text-5xl font-bold text-foreground leading-[1.1]">
           Meet The Team.
@@ -55,11 +56,13 @@ export function Team() {
           A small team of energy and software specialists. Reach out directly —
           no forms, no gatekeepers.
         </p>
-      </div>
+      </Reveal>
 
       <ul className="grid grid-cols-6 gap-4">
-        {members.map((member) => (
-          <li
+        {members.map((member, idx) => (
+          <Reveal
+            as="li"
+            delay={idx * 80}
             key={member.email}
             className="group relative flex flex-col bg-background transition-colors duration-300"
           >
@@ -96,11 +99,11 @@ export function Team() {
                 {member.email}
               </a>
             </div>
-          </li>
+          </Reveal>
         ))}
 
         {/* Join-us slot */}
-        <li className="group relative flex flex-col">
+        <Reveal as="li" delay={members.length * 80} className="group relative flex flex-col">
           <a
             href="#"
             className="group/card relative flex aspect-[4/5] flex-col items-center justify-center gap-3 border border-dashed border-border bg-background transition-colors duration-300 hover:border-primary hover:bg-muted/40"
@@ -125,7 +128,7 @@ export function Team() {
               Join the team
             </span>
           </div>
-        </li>
+        </Reveal>
       </ul>
     </Section>
   );

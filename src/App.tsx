@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 
 export default function App() {
   const headerRef = useRef<HTMLElement | null>(null);
-  const [theme, setTheme] = useState<HeaderTheme>("light");
+  const [theme, setTheme] = useState<HeaderTheme>("dark");
 
   useEffect(() => {
     const sections = Array.from(
@@ -48,7 +48,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="w-full">
+    <div className="w-full bg-[oklch(20.5%_0_0)]">
       <Header ref={headerRef} theme={theme} />
       <Hero />
       <Works />

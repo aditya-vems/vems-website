@@ -1,5 +1,6 @@
 import { Section } from "@/sections/Section";
 import { AccentTag } from "@/components/AccentTag";
+import { Reveal } from "@/components/Reveal";
 
 const LOGOS = [
   { src: "https://www.v-ems.com/images/Logo/Algemeen.webp", alt: "Algemeen" },
@@ -49,14 +50,15 @@ export function Works() {
       theme="light"
       containerClassName="flex flex-col gap-10 pt-20 pb-0"
     >
-      <div className="flex flex-col items-center gap-4 text-center">
+      <Reveal className="flex flex-col items-center gap-4 text-center">
         <AccentTag content="Trusted By" />
         <h2 className="text-3xl font-semibold tracking-tight text-foreground">
           Teams Shaping The Energy Transition.
         </h2>
-      </div>
+      </Reveal>
 
-      <div
+      <Reveal
+        delay={150}
         className="relative -mx-8 bg-muted"
         style={{
           maskImage:
@@ -72,7 +74,7 @@ export function Works() {
         <div className="overflow-hidden">
           <MarqueeTrack />
         </div>
-      </div>
+      </Reveal>
 
       <style>{`
         @keyframes works-marquee {

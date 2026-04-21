@@ -1,6 +1,7 @@
 import { Input } from "@v-ems/element";
 import { Section } from "@/sections/Section";
 import { LogoLine } from "@v-ems/element/brand";
+import { Reveal } from "@/components/Reveal";
 
 export function Footer() {
   return (
@@ -10,7 +11,7 @@ export function Footer() {
         theme="dark"
         containerClassName="flex flex-col gap-16 pt-10 pb-6"
       >
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1.2fr]">
+        <Reveal className="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1.2fr]">
           <div className="flex flex-col items-start gap-3">
             <LogoLine className="shrink-0 h-7" />
             <p className="text-base leading-relaxed text-muted-foreground">
@@ -82,7 +83,7 @@ export function Footer() {
               </p>
             </div>
           </section>
-        </div>
+        </Reveal>
       </Section>
       <div className="dark px-38 py-4 bg-card flex flex-col gap-4 border-t border-muted border-dashed pt-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
