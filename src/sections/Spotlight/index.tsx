@@ -35,7 +35,7 @@ export function Spotlight() {
     >
       <div className="flex flex-col gap-16">
         <Reveal className="flex flex-col gap-6 max-w-3xl">
-          <AccentTag content="VEMS" />
+          <AccentTag content="Company" />
           <h2 className="text-5xl font-bold leading-[1.1]">
             <span className="text-foreground">Speed & Clarity.</span>
             <br />
