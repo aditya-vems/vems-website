@@ -1,10 +1,12 @@
 import { forwardRef } from "react";
 import { Button } from "@v-ems/element";
-import { Navigation } from "./Navigation";
 import { LogoLine } from "@v-ems/element/brand";
-import { Reveal } from "./Reveal";
+import { Reveal } from "@/components/Reveal";
+import { Navigation } from "./Navigation";
 
 export type HeaderTheme = "dark" | "light";
+
+const BUTTON_CLASS = "rounded-full font-medium px-6 py-4 cursor-pointer";
 
 export const Header = forwardRef<HTMLElement, { theme: HeaderTheme }>(
   function Header({ theme }, ref) {
@@ -18,8 +20,6 @@ export const Header = forwardRef<HTMLElement, { theme: HeaderTheme }>(
     ]
       .filter(Boolean)
       .join(" ");
-    
-    const buttonClassName = "rounded-full font-medium px-6 py-4 cursor-pointer";
 
     return (
       <>
@@ -28,7 +28,8 @@ export const Header = forwardRef<HTMLElement, { theme: HeaderTheme }>(
           aria-hidden
           className={className}
           style={{
-            animation: "header-slide-down 600ms cubic-bezier(0.22, 1, 0.36, 1) both",
+            animation:
+              "header-slide-down 600ms cubic-bezier(0.22, 1, 0.36, 1) both",
           }}
         >
           <Reveal delay={650} className="flex items-center gap-24">
@@ -36,10 +37,10 @@ export const Header = forwardRef<HTMLElement, { theme: HeaderTheme }>(
             <Navigation />
           </Reveal>
           <Reveal delay={800} className="flex items-center gap-2">
-            <Button variant="secondary" className={buttonClassName}>
+            <Button variant="secondary" className={BUTTON_CLASS}>
               Sign In
             </Button>
-            <Button variant="default" className={buttonClassName}>
+            <Button variant="default" className={BUTTON_CLASS}>
               Talk To An Expert
             </Button>
           </Reveal>

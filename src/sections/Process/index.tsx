@@ -2,9 +2,7 @@ import { Section } from "@/sections/Section";
 import { StepCard } from "@/components/StepCard";
 import { AccentTag } from "@/components/AccentTag";
 import { Reveal } from "@/components/Reveal";
-import { AskIllustration } from "@/components/illustrations/AskIllustration";
-import { VisualizeIllustration } from "@/components/illustrations/VisualizeIllustration";
-import { ShareIllustration } from "@/components/illustrations/ShareIllustration";
+import { STEPS } from "./steps";
 
 export function Process() {
   return (
@@ -26,30 +24,16 @@ export function Process() {
       </Reveal>
 
       <div className="grid grid-cols-3 gap-4">
-        <Reveal delay={0}>
-          <StepCard
-            step={0}
-            title="Ask A Question."
-            description="Choose the location and upload your quarterly site data (or create it from scratch). Set your grid limits and select the question you want to answer."
-            illustration={<AskIllustration />}
-          />
-        </Reveal>
-        <Reveal delay={120}>
-          <StepCard
-            step={1}
-            title="Visualize The Answer."
-            description="Instantly spot congestion, flexibility, and upgrade opportunities. Explore unlimited what-if scenarios. Add solar, batteries, tariffs and smart control strategies."
-            illustration={<VisualizeIllustration />}
-          />
-        </Reveal>
-        <Reveal delay={240}>
-          <StepCard
-            step={2}
-            title="Share The Results."
-            description="Compare savings, payback, CAPEX, OPEX and energy impact side by side. Export automatic white-labeled reports with one click."
-            illustration={<ShareIllustration />}
-          />
-        </Reveal>
+        {STEPS.map((s, idx) => (
+          <Reveal key={s.title} delay={idx * 120}>
+            <StepCard
+              step={idx}
+              title={s.title}
+              description={s.description}
+              illustration={s.illustration}
+            />
+          </Reveal>
+        ))}
       </div>
     </Section>
   );
