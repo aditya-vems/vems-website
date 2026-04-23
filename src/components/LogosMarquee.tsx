@@ -14,12 +14,12 @@ const LOGOS = [
 
 function LogoCell({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="group relative flex h-20 w-44 shrink-0 items-center justify-center px-8">
+    <div className="relative flex h-20 w-44 shrink-0 items-center justify-center px-8">
       <img
         src={src}
         alt={alt}
         loading="lazy"
-        className="max-h-9 max-w-full object-contain opacity-55 grayscale transition duration-500 group-hover:opacity-100 group-hover:grayscale-0"
+        className="max-h-9 max-w-full object-contain"
       />
     </div>
   );

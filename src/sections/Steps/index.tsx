@@ -22,7 +22,7 @@ export function Steps() {
           </span>
         </h2>
         <p className="text-lg text-muted-foreground">
-          Your clients are asking urgent questions — and they expect clear,
+          Your clients are asking urgent questions and they expect clear,
           confident answers.
         </p>
       </Reveal>
@@ -41,7 +41,7 @@ export function Steps() {
             accent="#2563eb"
             illustration={<EVChargerIllustration />}
             title="EV Confidence"
-            description="Curious if your site is ready to ride the electric wave? Unlock instant insights on charging infrastructure, power needs, and more—no guesswork, just answers."
+            description="Curious if your site is ready to ride the electric wave? Unlock instant insights on charging infrastructure, power needs, and more. No guesswork, just answers."
           />
         </Reveal>
         <Reveal delay={240} className="flex-1">

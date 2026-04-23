@@ -10,7 +10,8 @@ export function Hero() {
       id="hero"
       theme="light"
       backdrop={<HeroShader className="absolute inset-0" />}
-      containerClassName="relative flex min-h-[calc(100vh-60px)] flex-col justify-between gap-16 pt-28 pb-10"
+      className="h-[calc(100dvh-var(--header-height,60px))]"
+      containerClassName="relative flex h-full flex-col justify-between gap-16 pt-28 pb-10"
     >
       <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-8">
         <div className="flex flex-col items-center">
@@ -36,7 +37,7 @@ export function Hero() {
         <Reveal delay={580}>
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="group flex w-full max-w-md items-center gap-1 rounded-full border border-white/60 bg-white/50 p-1 py-0.5 pl-6! shadow-[0_12px_40px_-12px_rgba(15,23,42,0.18)] backdrop-blur-xl transition-colors focus-within:border-primary"
+            className="group flex w-full max-w-xl items-center gap-1 rounded-full border border-white/70 bg-white/30 p-1 py-0.5 pl-6! shadow-[0_12px_40px_-12px_rgba(15,23,42,0.18)] backdrop-blur-2xl backdrop-saturate-150 transition-colors focus-within:border-primary"
           >
             <input
               type="email"
@@ -47,7 +48,7 @@ export function Hero() {
             <Button
               type="submit"
               variant="default"
-              className="cursor-pointer shrink-0 rounded-full bg-foreground px-5 py-4 font-medium text-background transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="cursor-pointer shrink-0 rounded-full bg-foreground px-5 py-4 font-medium text-background transition-colors duration-200 ease-out hover:bg-neutral-700"
             >
               Talk To An Expert
             </Button>

@@ -15,9 +15,18 @@ export default function App() {
 
     let raf = 0;
 
+    const measureHeader = () => {
+      const h = headerRef.current?.getBoundingClientRect().height ?? 0;
+      document.documentElement.style.setProperty(
+        "--header-height",
+        `${Math.round(h)}px`,
+      );
+      return h;
+    };
+
     const updateTheme = () => {
       raf = 0;
-      const headerHeight = headerRef.current?.getBoundingClientRect().height ?? 0;
+      const headerHeight = measureHeader();
       const markerY = window.scrollY + headerHeight + 1;
 
       let current = sections[0];
@@ -36,6 +45,15 @@ export default function App() {
       raf = window.requestAnimationFrame(updateTheme);
     };
 
+    const headerResizeObserver =
+      headerRef.current && "ResizeObserver" in window
+        ? new ResizeObserver(measureHeader)
+        : null;
+    if (headerRef.current && headerResizeObserver) {
+      headerResizeObserver.observe(headerRef.current);
+    }
+
+    measureHeader();
     updateTheme();
     window.addEventListener("scroll", onScrollOrResize, { passive: true });
     window.addEventListener("resize", onScrollOrResize);
@@ -44,6 +62,7 @@ export default function App() {
       if (raf) window.cancelAnimationFrame(raf);
       window.removeEventListener("scroll", onScrollOrResize);
       window.removeEventListener("resize", onScrollOrResize);
+      headerResizeObserver?.disconnect();
     };
   }, []);
 
