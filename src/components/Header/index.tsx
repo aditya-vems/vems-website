@@ -8,6 +8,8 @@ export type HeaderTheme = "dark" | "light";
 
 const BUTTON_CLASS = "rounded-full font-medium px-6 py-4 cursor-pointer";
 
+const APP_SIGN_IN_URL = "http://localhost:5174/sign-in";
+
 export const Header = forwardRef<HTMLElement, { theme: HeaderTheme }>(
   function Header({ theme }, ref) {
     const className = [
@@ -37,7 +39,13 @@ export const Header = forwardRef<HTMLElement, { theme: HeaderTheme }>(
             <Navigation />
           </Reveal>
           <Reveal delay={800} className="flex items-center gap-2">
-            <Button variant="secondary" className={BUTTON_CLASS}>
+            <Button
+              variant="secondary"
+              className={BUTTON_CLASS}
+              onClick={() => {
+                window.location.href = APP_SIGN_IN_URL;
+              }}
+            >
               Sign In
             </Button>
             <Button variant="default" className={BUTTON_CLASS}>
