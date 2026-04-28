@@ -8,7 +8,9 @@ export type HeaderTheme = "dark" | "light";
 
 const BUTTON_CLASS = "rounded-full font-medium px-6 py-4 cursor-pointer";
 
-const APP_SIGN_IN_URL = "http://localhost:5174/sign-in";
+const APP_SIGN_IN_URL = import.meta.env.PROD
+  ? "https://vems-mocks.vercel.app/sign-in"
+  : "http://localhost:5174/sign-in";
 
 export const Header = forwardRef<HTMLElement, { theme: HeaderTheme }>(
   function Header({ theme }, ref) {
